@@ -68,7 +68,7 @@
 			"api/security/*",
 			"api/settingsManager",
 			"api/productos",
-			"packages\\my-components"
+            "packages/*"
 		]
 	},
 	"scripts": {
