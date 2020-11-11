@@ -11,7 +11,11 @@ import { Carousel } from "../components/Carousel";
 import { Avatar } from "../components/Avatar";
 
 
+
+
+
 const Static = () => {
+
     const { header: Header, footer: Footer}: any = useMemo(() => {
         const plugins = getPlugins<PbPageLayoutComponentPlugin>("pb-layout-component");
         return plugins.reduce((acc, item) => {
@@ -25,7 +29,6 @@ const Static = () => {
         detalle: '',
         url:""
     })
-
     const handleInputChange = (event) => {
         // console.log(event.target.name)
         // console.log(event.target.value)
@@ -40,9 +43,8 @@ const Static = () => {
         console.log('enviando datos...' + datos.nombre + ' ' + datos.detalle)
     }
 
-
-    return (
-        <Query query={getBookData}>
+return (
+    <Query query={getBookData}>
             {({ data: response }) => {
                 const { title } = get(response, "book.listBooks.data") || {};
                 console.log(title)
@@ -54,6 +56,8 @@ const Static = () => {
         <React.Fragment>
             <Addons />
             <Header />
+
+
             {/* Carrucel */}
             <div className="d-flex justify-content-beetween ml-4">
             <div className="w-50">
@@ -72,42 +76,38 @@ const Static = () => {
                         <img src={img} />
                         <img src={img} />
             </Carousel>
+
             </div>
-
-           
-               
-        
-
-               
-            <div>
-            <h1>Formulario</h1>
-            <form className="row" onSubmit={enviarDatos}>
-                <div className="col-md-3">
-                    <input type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
-                </div>
-                <div className="col-md-3">
-                    <input type="text" placeholder="Detalle" className="form-control" onChange={handleInputChange} name="detalle"></input>
-                </div>
-                <div className="col-md-3">
-                    <input type="text" placeholder="URL" className="form-control" onChange={handleInputChange} name="url"></input>
-                </div>
-               
-                <button type="submit" className="btn btn-primary">Enviar</button>
-            </form>
-            <ul>
-                {/* <li>{datos.nombre}</li>
-                <li>{datos.detalle}</li> */}
-            </ul>
-        </div>
-
-          
+            <div className=" mx-4">
+                <h1>Formulario</h1>
+                <form className="row mx-4" onSubmit={enviarDatos}>
+                    <div className="col-md-8 mt-2">
+                        <input type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
+                    </div>
+                    <div className="col-md-8 my-1">
+                        <input type="text" placeholder="Desatacado" className="form-control" onChange={handleInputChange} name="destacado"></input>
+                    </div>
+                    <div className="col-md-8 my-1">
+                        <input type="text" placeholder="URL" className="form-control" onChange={handleInputChange} name="url"></input>
+                    </div>
+                    <div className="col-md-8 my-1">
+                        <textarea  placeholder="Detalle" className="form-control" onChange={handleInputChange} name="detalle"></textarea>
+                    </div>
+                
+                    <button type="submit" className="btn btn-primary my-1 col-md-3 mx-2">Enviar</button>
+                </form>
+                <ul>
+                    {/* <li>{datos.nombre}</li>
+                    <li>{datos.detalle}</li> */}
+                </ul>
             </div>
-
+            </div>
             <Footer />
             </React.Fragment>
                             )
-                    }}
-            </Query>
+                        }
+                    }
+        </Query>
     
     );
 };
