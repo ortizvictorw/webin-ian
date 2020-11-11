@@ -27,5 +27,8 @@
     "build": "rimraf ./dist *.tsbuildinfo && babel src -d dist --source-maps --copy-files --extensions \".ts,.tsx\"",
     "watch": "babel src -d dist --source-maps --copy-files --extensions \".ts,.tsx\" --watch",
     "postbuild": "cp package.json LICENSE dist/ && tsc -p tsconfig.build.json"
+  },
+  "devDependencies": {
+    "@types/lodash.get": "^4.4.6"
   }
 }

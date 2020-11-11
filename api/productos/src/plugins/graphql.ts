@@ -54,21 +54,23 @@ const plugin: GraphQLSchemaPlugin = {
                 detalle: String
                 categoria: String
                 tags: String
-                precio: Number
+                img:String
                 destacado:Boolean
                 publicado:Boolean
                 createdOn: DateTime
             }
 
             input ProductoInput {
+                
                 id: ID
                 nombre: String!
                 detalle: String
                 tags: String
-                precio: Number
+                img:String
                 destacado:Boolean
                 publicado:Boolean
                 categoria: String
+                
                
             }
 
@@ -77,7 +79,7 @@ const plugin: GraphQLSchemaPlugin = {
                 categoria: String
                 destacado:Boolean
                 publicado:Boolean
-                precio: Number
+                
 
                
             }

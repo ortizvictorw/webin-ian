@@ -1,7 +1,6 @@
 // @ts-ignore
-import { withFields, withName, string, boolean, pipe,number } from "@webiny/commodo";
+import { withFields, withName, string, boolean, pipe} from "@webiny/commodo";
 import { validation } from "@webiny/validation";
-
 /**
  * A simple "Producto" data model, that consists of a couple of simple fields.
  *
@@ -15,8 +14,9 @@ export default ({ createBase }) =>
             // A simple "string" field, with a couple of validators attached.
             nombre: string({ validation: validation.create("required,minLength:3,maxLength:100") }),
             detalle: string({ validation: validation.create("maxLength:500") }),
-            categoria:["remeras","pantalones"],
-            precio:number(),
+            categoria:string({ validation: validation.create("maxLength:500") }),
+            
+            img:string({ validation: validation.create("maxLength:500") }),
             tags: string({ validation: validation.create("maxLength:500") }),
             destacado: boolean({ value: true }),
             publicado:boolean({ value: true }),
@@ -26,4 +26,7 @@ export default ({ createBase }) =>
 
         }))
         
-    )(createBase());
+    )
+    (createBase());
+    
+   

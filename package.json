@@ -68,7 +68,8 @@
 			"api/security/*",
 			"api/settingsManager",
 			"api/productos",
-            "packages/*"
+			"packages/*",
+			"api/books"
 		]
 	},
 	"scripts": {

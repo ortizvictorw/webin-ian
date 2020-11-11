@@ -3,7 +3,7 @@
 import adminTemplate from "@webiny/app-template-admin-full";
 
 // Import custom theme plugins
-import theme from "../../../packages";
+import theme from "theme";
 
 // Import styles which include custom theme styles
 import "./App.scss";

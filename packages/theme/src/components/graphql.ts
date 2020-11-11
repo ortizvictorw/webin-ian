@@ -15,6 +15,18 @@ export const getHeaderData = gql`
     }
 `;
 
+export const getBookData = gql`
+    query PbGetHeader{
+         books{
+        listBooks{
+          data{
+            title
+          }
+        }
+      }
+      }
+`;
+
 export const getFooterData = gql`
     query PbGetSiteFooter {
         pageBuilder {
